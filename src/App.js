@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import LocationSearch from './components/LocationSearch';
 import WeekForecast from './components/WeekForecast';
 import TodayWeather from './components/TodayWeather';
+import Favorites from './components/Favorites';
 import { getForecast } from './utils/api';
 
 import './App.css';
@@ -62,8 +63,7 @@ class App extends Component {
   }
 
   render() {
-    const { weekForecast, todayWeather, favorites } = this.state;
-    console.log("state app render: ", )
+    const { weekForecast, todayWeather, favorites, inputVal } = this.state;
 
     return (
       <div className="weather-app">
@@ -71,15 +71,14 @@ class App extends Component {
           <h1 className="weather-title">New rocket forecast app</h1>
         </header>
         <LocationSearch
+          value={inputVal}
           handleSubmit={this.handleSearchSubmit}
           handleFavorite={this.renderFavorites}
           renderButton={() => (
             <button className="location-search-submit">Find</button>
           )}
         />
-        <div className="favorites">{favorites.map(city =>
-          <p>{city}</p>
-        )}</div>
+        <Favorites cities={favorites} />
         <TodayWeather today={todayWeather} />
         <WeekForecast forecast={weekForecast} />
       </div>

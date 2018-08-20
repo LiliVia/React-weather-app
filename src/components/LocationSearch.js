@@ -12,7 +12,7 @@ class LocationSearch extends React.Component {
   }
 
   isValidCityName(name) {
-    return !!name & !/\d/.test(name);
+    return !!name && !/\d/.test(name);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -24,7 +24,6 @@ class LocationSearch extends React.Component {
 
   handleChange = ({ target }) => {
     this.setState({ value: target.value });
-    console.log(this.state.value, 'handlechange state value');
   }
 
   onSubmitSearch = event => {
@@ -66,7 +65,7 @@ class LocationSearch extends React.Component {
           type="text"
           className='location-search-input'
           value={value}
-          onSubmit={this.handleChange}
+          onChange={this.handleChange}
         />
         {renderButton()}
         <button

@@ -22,6 +22,9 @@ body {
       display: block;
       padding: 15px;
       text-transform: capitalize;
+      &:first-child {
+        color: darkblue;
+      }
     }
   }
   .week-forecast {
@@ -46,7 +49,6 @@ body {
 
 form.search-valid {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }

@@ -20,6 +20,8 @@ body {
     display: block;
     padding: 15px;
     text-transform: capitalize; }
+    .weather-app .favorites p:first-child {
+      color: darkblue; }
 
 .weather-app .week-forecast {
   display: flex;
@@ -40,7 +42,6 @@ body {
 
 form.search-valid {
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center; }
 
